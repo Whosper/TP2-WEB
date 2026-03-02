@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cours 1 — Introduction JavaScript</title>
+  <link rel="stylesheet" href="../Style/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Cours 1 — Introduction JavaScript</h1>
+    <div class="navlinks">
+      <a href="../index.html">Retour accueil</a>
+      <a href="cours_js.html">Retour Cours et TP JS</a>
+      <a href="#sommaire">Sommaire</a>
+    </div>
+  </header>
+
+<main class="container">
+  <section class="card" id="sommaire">
+    <h2>Sommaire</h2>
+    <ol>
+      <li><a href="#bases">Les bases du langage</a>
+        <ol>
+          <li><a href="#structure">Structure de base d’un programme</a></li>
+          <li><a href="#commentaires">Les commentaires</a></li>
+          <li><a href="#instructions">Déclarations et instructions</a></li>
+          <li><a href="#variables">Déclaration de variables et constantes</a></li>
+          <li><a href="#types">Types et plage de valeurs</a></li>
+          <li><a href="#operateurs">Les opérateurs</a></li>
+          <li><a href="#io">Fonctions d’entrée/sortie</a></li>
+        </ol>
+      </li>
+    </ol>
+  </section>
+
+  <section class="card" id="bases">
+    <h2>Langage JavaScript — Les bases du langage</h2>
+
+    <section id="structure">
+      <h3>La structure de base d’un programme en JavaScript</h3>
+      <p>
+        Lorsque le code JavaScript se trouve dans un fichier séparé (extension <code>.js</code>), la structure générale d’un programme est relativement simple.
+      </p>
+
+      <pre><code>/* zone d'en-tête */
+
+/* déclaration des variables globales */
+Declaration1;
+Declaration2;
+
+/* définition des fonctions (mot clef function) */
+
+/* CORPS DU PROGRAMME */
+Instruction1;
+Instruction2;
+
+/* FIN */</code></pre>
+
+      <p>
+        Même s'il est possible de déclarer nos variables à n'importe quel moment, il est conseillé de le faire en début de script pour une meilleure lisibilité.
+      </p>
+
+      <p>Lorsque le JavaScript est écrit dans une page Web, la structure est différente :</p>
+
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;TODO supply a title&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+    &lt;script&gt;
+      // ici les variables globales à la page et les fonctions
+    &lt;/script&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;script&gt;
+      // ici les instructions
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <p>
+        La balise permettant d’ajouter du JavaScript est <code>&lt;script&gt; … &lt;/script&gt;</code>.
+        Elle se place souvent dans <code>&lt;head&gt;</code> (variables/fonctions) et dans <code>&lt;body&gt;</code> (instructions).
+      </p>
+
+      <p><a href="#sommaire">Revenir au sommaire</a></p>
+    </section>
+
+    <section id="commentaires">
+      <h3>Les commentaires</h3>
+      <p>
+        Les commentaires permettent la relecture du programme (pour soi-même et pour une équipe). Un commentaire d’en-tête est recommandé.
+      </p>
+      <p>Deux types :</p>
+      <ul>
+        <li><code>//</code> : commentaire sur la ligne</li>
+        <li><code>/* … */</code> : commentaire multi-lignes</li>
+      </ul>
+
+      <pre><code>/*
+ * File:   HelloWorld.js
+ * Author: sgibert
+ * Created on 14 septembre 2018, 20:19
+ * Description : explique ici ce que fait ton programme
+ */</code></pre>
+
+      <p>Évite les commentaires inutiles qui répètent juste le code.</p>
+      <p><a href="#sommaire">Revenir au sommaire</a></p>
+    </section>
+
+    <section id="instructions">
+      <h3>Déclarations et instructions</h3>
+      <p>
+        Une instruction ou une déclaration se termine généralement par un point-virgule <code>;</code>.
+        Même si JavaScript l’autorise parfois, on va l’ajouter systématiquement.
+      </p>
+      <p><a href="#sommaire">Revenir au sommaire</a></p>
+    </section>
+
+    <section id="variables">
+      <h3>Déclaration de variables et constantes</h3>
+      <p>
+        JavaScript est faiblement typé : le type n’est pas déclaré explicitement, il est déterminé par l’usage.
+      </p>
+
+      <pre><code>var a = 3;
+a = "coucou";</code></pre>
+
+      <p>Déclarer :</p>
+      <ul>
+        <li><code>var</code> : variable globale (dans la plupart des cas)</li>
+        <li><code>let</code> : variable locale dans un bloc <code>{ }</code>, globale si hors bloc</li>
+        <li><code>const</code> : constante (doit être initialisée)</li>
+      </ul>
+
+      <pre><code>let a;
+let b = 4;
+let c, d = 3, e;
+
+const f = 3;
+
+var g = "Bonjour";</code></pre>
+
+      <p><a href="#sommaire">Revenir au sommaire</a></p>
+    </section>
+
+    <section id="types">
+      <h3>Types et plage de valeurs</h3>
+      <p>JavaScript a notamment : <code>Number</code>, <code>String</code>, <code>Boolean</code>, <code>Null</code>, <code>Undefined</code>, <code>BigInt</code>, <code>Object</code>, <code>Symbol</code>.</p>
+
+      <h4>Exemples</h4>
+      <pre><code>let a = 10;
+let b = "coucou";
+let ok = true;</code></pre>
+
+      <h4>Attention aux limites de Number (entiers)</h4>
+      <pre><code>let a = 2**53 - 1;
+a = a + 20;</code></pre>
+
+      <p><a href="#sommaire">Revenir au sommaire</a></p>
+    </section>
+
+    <section id="operateurs">
+      <h3>Les opérateurs</h3>
+
+      <h4>Opérateurs arithmétiques</h4>
+      <ul>
+        <li><code>+</code> addition, <code>-</code> soustraction, <code>*</code> multiplication, <code>/</code> division</li>
+        <li><code>%</code> modulo, <code>**</code> puissance</li>
+      </ul>
+
+      <p>Exemple :</p>
+      <pre><code>let a = 5, b = 2;
+let c = a / b;
+let r = a % b;</code></pre>
+
+      <h4>Opérateurs logiques</h4>
+      <ul>
+        <li><code>!</code>, <code>&&</code>, <code>||</code></li>
+        <li><code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></li>
+      </ul>
+
+      <h4>Affectation et incrémentation</h4>
+      <ul>
+        <li><code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>**=</code></li>
+        <li><code>++</code>, <code>--</code></li>
+        <li>Ternaire <code>condition ? expr1 : expr2</code></li>
+      </ul>
+
+      <pre><code>let i = 3;
+i++;
+i += 1;
+
+let j = 4;
+let k = i > j ? 10 : -10;</code></pre>
+
+      <p><a href="#sommaire">Revenir au sommaire</a></p>
+    </section>
+
+    <section id="io">
+      <h3>Fonctions d’entrée/sortie</h3>
+      <ul>
+        <li><code>window.alert(message)</code></li>
+        <li><code>window.confirm(message)</code> retourne <code>true</code> ou <code>false</code></li>
+        <li><code>window.prompt(message, defaut)</code> retourne une chaîne ou <code>null</code></li>
+      </ul>
+
+      <pre><code>window.alert("Bonjour");
+let ok = window.confirm("Continuer ?");
+let saisie = window.prompt("Ton nom ?", "");</code></pre>
+
+      <p><a href="#sommaire">Revenir au sommaire</a></p>
+    </section>
+  </section>
+
+  <section class="card">
+    <h2>Téléchargement et contact</h2>
+    <p>
+      Télécharger le cours :
+      <a href="coursJS.pdf" download>Télécharger le cours (PDF)</a>
+    </p>
+    <p>
+      Contacter l'auteur :
+      <a href="mailto:auteur@exemple.com?subject=Cours%201%20—%20Introduction%20JavaScript&body=Bonjour%2C%0A%0AJe%20vous%20contacte%20au%20sujet%20du%20cours%20%22Cours%201%20—%20Introduction%20JavaScript%22.%0A%0AMerci.">
+        Envoyer un mail
+      </a>
+    </p>
+  </section>
+</main>
+
+
+  <footer class="footer">
+    <p><a href="#sommaire">Sommaire</a></p>
+  </footer>
+
+  <script src="../Script/app.js"></script>
+</body>
+</html>

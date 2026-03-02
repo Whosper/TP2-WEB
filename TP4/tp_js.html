@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP8 — Les tableaux</title>
+  <link rel="stylesheet" href="../Style/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>TP8 — Les tableaux</h1>
+    <div class="navlinks">
+      <a href="../index.html">Retour accueil</a>
+      <a href="cours_js.html">Retour Cours et TP JS</a>
+    </div>
+  </header>
+
+<main class="container">
+  <section class="card">
+    <h2>TP8 : Les tableaux</h2>
+
+    <h3>Introduction</h3>
+    <p>
+      Dans ce TP, il est demandé d'écrire des fonctions utilitaires permettant de travailler avec les tableaux.
+      Ces fonctions seront ensuite réutilisables dans d'autres TP.
+    </p>
+    <p>
+      Le tableau utilisé contient <strong>N</strong> éléments. Il est interdit d'ajouter, d'insérer ou de supprimer une case.
+    </p>
+
+    <h3>Déclaration du tableau</h3>
+    <pre><code>let N = parseInt(prompt("Combien de case pour le tableau ?"));
+let A = new Array(N);
+let nbElemRempli = 0;</code></pre>
+
+    <h3>Aperçu</h3>
+    <p>Le tableau est vide : N cases, toutes vides (valeur <code>undefined</code>).</p>
+  </section>
+
+  <section class="card">
+    <h2>Organisation du travail</h2>
+    <p>Les fonctions seront codées dans un fichier <code>.js</code> séparé, ajouté au projet.</p>
+    <p>Pour chaque fonction, respecter les 4 étapes :</p>
+    <ol>
+      <li>Boite noire : réfléchir aux entrées et aux sorties.</li>
+      <li>Coder la fonction dans le fichier <code>.js</code>.</li>
+      <li>Ajouter le mode d’emploi de la fonction.</li>
+      <li>Tester la fonction (inspecteur d’élément).</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Exercices</h2>
+
+    <h3>Exercice 1</h3>
+    <p>
+      Écrire une fonction <code>initialiserTab1()</code> qui initialise les N cases d’un tableau avec la valeur <code>0</code>.
+      À la fin, toutes les cases sont considérées remplies.
+    </p>
+
+    <h3>Exercice 2</h3>
+    <p>
+      Écrire une fonction <code>initialiserTab2(val)</code> qui initialise les N cases avec une valeur passée en paramètre.
+      À la fin, toutes les cases sont considérées remplies.
+    </p>
+
+    <h3>Exercice 3</h3>
+    <p>
+      Écrire une fonction <code>remplirTab1(min, max)</code> qui remplit les N cases avec des valeurs aléatoires entre MIN et MAX.
+      Les anciennes valeurs sont remplacées.
+    </p>
+
+    <h3>Exercice 4</h3>
+    <p>
+      Écrire une fonction <code>remplirTab2(nb, min, max)</code> qui remplit un certain nombre de cases (sur N) avec des valeurs
+      aléatoires entre MIN et MAX, en commençant à partir de <code>nbElemRempli</code>.
+    </p>
+    <p>
+      Si le nombre de cases à remplir dépasse la capacité du tableau, on remplit jusqu’à la fin (sans ajouter de case).
+    </p>
+
+    <h3>Exercice 5</h3>
+    <p>
+      Écrire une fonction <code>afficherTab1()</code> qui affiche seulement les cases remplies du tableau.
+    </p>
+
+    <h3>Exercice 6</h3>
+    <p>
+      Écrire une fonction <code>afficherTab2()</code> qui affiche toutes les cases du tableau (remplies ou non).
+    </p>
+
+    <h3>Exercice 7</h3>
+    <p>
+      Écrire une fonction <code>afficherTab3(deb, fin)</code> qui affiche les cases du tableau de la position DEB à FIN.
+    </p>
+
+    <h3>Exercice 8</h3>
+    <p>
+      Écrire une fonction <code>remplirElement(val)</code> qui remplit la première case vide avec une valeur.
+      Si le tableau est plein, l’opération est impossible.
+    </p>
+    <p>
+      Cette fonction retourne <code>false</code> si l’opération n’a pas pu être effectuée,
+      sinon elle retourne le nombre d’éléments remplis.
+    </p>
+
+    <h3>Exercice 9</h3>
+    <p>
+      Écrire une fonction <code>saisirTab()</code> permettant à l’utilisateur de saisir un certain nombre d’éléments sur N.
+      Les éléments sont ajoutés à partir de la première case vide.
+    </p>
+    <p>
+      Cette fonction retourne le nombre de cases remplies.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Retour</h2>
+    <p><a href="cours_js.html">Retour à la liste des cours JS</a></p>
+    <p><a href="../index.html">Retour à l'accueil TP4</a></p>
+  </section>
+</main>
+
+
+  <footer class="footer">
+    <p>TP4 — JS</p>
+  </footer>
+
+  <script src="../Script/app.js"></script>
+</body>
+</html>
