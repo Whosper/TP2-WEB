@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>Affichage du logo</h1>
+  <nav>
+    <a href="ex2.html">Retour exercice 2</a>
+    <a href="index.html">Accueil</a>
+  </nav>
+</header>
+
+<main>
+  <section class="card">
+    <p class="small">Logo affiché en taille originale.</p>
+    <div class="center">
+      <img id="img" src="" alt="Logo" style="max-width:100%;height:auto;">
+    </div>
+  </section>
+</main>
+
+<script>
+  const params = new URLSearchParams(location.search);
+  const img = params.get("img") || "";
+  const safe = /^[a-z]+\.svg$/i.test(img) ? img : "php.svg";
+  document.getElementById("img").src = "img/logos/" + safe;
+</script>
+</body>
+</html>
