@@ -1,0 +1,1 @@
+Dossier Script (futurs fichiers JavaScript). Aucun JS demandé pour TP6.
