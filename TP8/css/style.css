@@ -1,0 +1,40 @@
+html,body{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;background:#f5f6fb;color:#111;}
+*{box-sizing:border-box;}
+header{background:#243b85;color:#fff;padding:16px 18px;}
+header h1{margin:0;font-size:20px;}
+header p{margin:6px 0 0 0;opacity:.9;font-size:13px;}
+main{max-width:1100px;margin:18px auto;padding:0 14px;}
+.card{background:#fff;border:1px solid #e6e7ee;border-radius:14px;padding:14px;margin:14px 0;}
+.grid{display:grid;grid-template-columns:1fr;gap:12px;}
+@media(min-width:900px){.grid{grid-template-columns:1fr 1fr;}}
+label{display:block;font-size:13px;color:#333;margin-bottom:6px;}
+input,select{width:100%;padding:10px 12px;border:1px solid #cfd6ff;border-radius:10px;font:inherit;}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;}
+button{border:none;border-radius:10px;padding:10px 14px;font:inherit;cursor:pointer;}
+button.primary{background:#243b85;color:#fff;}
+button.primary:hover{background:#1f2f6b;}
+button.ghost{background:#eef2ff;color:#243b85;border:1px solid #c7cff8;}
+button.ghost:hover{background:#e3e9ff;}
+.small{font-size:13px;color:#333;line-height:1.4;}
+.error{color:#b00020;font-weight:700;}
+.hidden{display:none;}
+.devis{background:#fff;border:1px solid #cfd6ff;border-radius:16px;overflow:hidden;}
+.devisTop{display:flex;gap:16px;align-items:flex-start;justify-content:space-between;padding:18px;}
+.devisTitle{font-size:42px;letter-spacing:1px;color:#556b4f;font-weight:800;margin:0;}
+.devisNo{font-size:42px;letter-spacing:1px;color:#556b4f;font-weight:800;margin:0;}
+.devisMeta{font-size:12px;color:#333;line-height:1.4;text-align:right;}
+.party{display:flex;gap:18px;justify-content:space-between;padding:0 18px 14px;}
+.partyBox{width:48%;font-size:12px;color:#333;line-height:1.4;}
+.partyBox h3{margin:0 0 6px 0;font-size:12px;color:#111;letter-spacing:.3px;}
+.table{width:calc(100% - 36px);margin:0 18px 14px;border-collapse:collapse;font-size:12px;}
+.table th,.table td{border:1px solid #9aa4b2;padding:8px;vertical-align:top;}
+.table th{background:#f0f2f8;text-align:left;}
+.right{text-align:right;}
+.sum{display:flex;justify-content:flex-end;padding:0 18px 18px;}
+.sumBox{min-width:320px;border:1px solid #9aa4b2;}
+.sumRow{display:flex;justify-content:space-between;gap:12px;padding:8px 10px;border-top:1px solid #9aa4b2;font-size:12px;}
+.sumRow:first-child{border-top:none;}
+.sumTotal{background:#556b4f;color:#fff;font-weight:800;}
+.footer{padding:12px 18px;border-top:1px solid #e6e7ee;font-size:11px;color:#333;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+hr.sep{border:none;border-top:1px solid #e6e7ee;margin:0;}

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP8 — Devis béton (formulaire + affichage)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>TP8 — Devis béton (exercice 8)</h1>
+  <p>Formulaire HTML + affichage du devis avec JavaScript, en jouant sur display/visibility.</p>
+</header>
+
+<main>
+  <section class="card">
+    <h2>Saisie</h2>
+    <form id="form">
+      <div class="grid">
+        <div>
+          <label for="clientNom">Nom / Entreprise</label>
+          <input id="clientNom" type="text" required>
+        </div>
+        <div>
+          <label for="clientAdresse">Adresse</label>
+          <input id="clientAdresse" type="text" required>
+        </div>
+
+        <div class="row2">
+          <div>
+            <label for="clientTel">Téléphone</label>
+            <input id="clientTel" type="text">
+          </div>
+          <div>
+            <label for="clientMail">Email</label>
+            <input id="clientMail" type="text">
+          </div>
+        </div>
+
+        <div class="row2">
+          <div>
+            <label for="surface">Surface (m²)</label>
+            <input id="surface" type="text" placeholder="ex: 95">
+          </div>
+          <div>
+            <label for="epaisseur">Épaisseur (cm) (15 à 35)</label>
+            <input id="epaisseur" type="text" placeholder="ex: 18">
+          </div>
+        </div>
+
+        <div class="row2">
+          <div>
+            <label for="tva">TVA (%)</label>
+            <input id="tva" type="text" value="20">
+          </div>
+          <div>
+            <label>Tarifs</label>
+            <div class="small">
+              Béton : 91€ HT / m³<br>
+              Transport : 140€ / livraison (camion 9 m³)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p id="err" class="error"></p>
+
+      <div class="btns">
+        <button class="primary" type="submit">Obtenir le devis</button>
+        <button class="ghost" type="button" id="btnReset">Réinitialiser</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="blocDevis" class="devis hidden">
+    <div class="devisTop">
+      <div style="display:flex;gap:16px;align-items:center;">
+        <img src="assets/logo.svg" alt="Logo" style="width:86px;height:86px;">
+        <div>
+          <p class="devisTitle">DEVIS</p>
+        </div>
+      </div>
+      <div style="text-align:right;">
+        <p class="devisNo">N°<span id="devisNo"></span></p>
+        <div class="devisMeta">
+          <div>Date du devis : <span id="devisDate"></span></div>
+          <div>Validité : <span id="devisValid"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="party">
+      <div class="partyBox">
+        <h3>ÉMIS PAR</h3>
+        <div><strong id="socNom"></strong></div>
+        <div id="socAdr"></div>
+        <div>Email : <span id="socMail"></span></div>
+        <div>Tél : <span id="socTel"></span></div>
+      </div>
+
+      <div class="partyBox" style="text-align:right;">
+        <h3>À L’ATTENTION DE</h3>
+        <div><strong id="cliNom"></strong></div>
+        <div id="cliAdr"></div>
+        <div>Email : <span id="cliMail"></span></div>
+        <div>Tél : <span id="cliTel"></span></div>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th class="right">Prix</th>
+          <th class="right">Quantité</th>
+          <th class="right">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Béton prêt à l’emploi<br>
+            <span class="small">Surface : <span id="surfOut"></span> — Épaisseur : <span id="epOut"></span></span><br>
+            <span class="small">Volume calculé : <span id="volOut"></span> — Volume livré : <span id="volLivOut"></span></span><br>
+            <span class="small">Camions 9 m³ : <span id="camOut"></span> — Ciment : <span id="cimentOut"></span></span>
+          </td>
+          <td class="right" id="puBeton"></td>
+          <td class="right" id="qteBeton"></td>
+          <td class="right" id="totBeton"></td>
+        </tr>
+        <tr>
+          <td>Transport (1 livraison = 1 camion de 9 m³)</td>
+          <td class="right" id="puTr"></td>
+          <td class="right" id="qteTr"></td>
+          <td class="right" id="totTr"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="sum">
+      <div class="sumBox">
+        <div class="sumRow"><span>Sous total (HT)</span><span id="sousTotal"></span></div>
+        <div class="sumRow"><span>TVA (<span id="tvaLine"></span>)</span><span id="tvaTotal"></span></div>
+        <div class="sumRow sumTotal"><span>TOTAL (TTC)</span><span id="ttcTotal"></span></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>
+        Conditions : livraison uniquement par camions de 9 m³ (arrondi à l’entier supérieur).<br>
+        Dosage : 350 kg de ciment / m³.
+      </div>
+      <div>
+        Signature client : ______________________
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>
