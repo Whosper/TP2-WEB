@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP9 — Exercice 3</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>Exercice 3 — Compte à rebours</h1>
+</header>
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="ex1.html">Exercice 1</a>
+  <a href="ex2.html">Exercice 2</a>
+  <a href="ex4.html">Exercice 4</a>
+</nav>
+<main>
+  <section class="card">
+    <h2>Paramètres</h2>
+    <div class="grid2">
+      <div>
+        <label for="titreEvt">Nom de l’évènement</label>
+        <input id="titreEvt" type="text" value="Fin des cours">
+      </div>
+      <div>
+        <label for="dateEvt">Date/heure</label>
+        <input id="dateEvt" type="text" value="2026-06-18 16:00">
+        <div class="small">Format : AAAA-MM-JJ HH:MM</div>
+      </div>
+      <div style="display:flex;align-items:flex-end;">
+        <button id="btnStart" class="btn" type="button">Démarrer</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 id="hEvt">Compte à rebours</h2>
+    <div class="countdown" id="cd">
+      <div class="cdBox"><div class="cdNum" id="d">0</div><div class="cdLbl">Jours</div></div>
+      <div class="cdBox"><div class="cdNum" id="h">0</div><div class="cdLbl">Heures</div></div>
+      <div class="cdBox"><div class="cdNum" id="m">0</div><div class="cdLbl">Minutes</div></div>
+      <div class="cdBox"><div class="cdNum" id="s">0</div><div class="cdLbl">Secondes</div></div>
+    </div>
+    <p class="small" id="state"></p>
+  </section>
+</main>
+<script src="js/ex3.js"></script>
+</body>
+</html>

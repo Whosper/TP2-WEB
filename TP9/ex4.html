@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP9 — Exercice 4</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>Exercice 4 — Calendrier paramétrable</h1>
+</header>
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="ex1.html">Exercice 1</a>
+  <a href="ex2.html">Exercice 2</a>
+  <a href="ex3.html">Exercice 3</a>
+</nav>
+<main>
+  <section class="card">
+    <h2>Paramètres</h2>
+    <div class="calCtrl">
+      <div>
+        <label for="firstDay">Premier jour du mois</label>
+        <select id="firstDay">
+          <option value="1">1 (Lundi)</option>
+          <option value="2">2 (Mardi)</option>
+          <option value="3">3 (Mercredi)</option>
+          <option value="4">4 (Jeudi)</option>
+          <option value="5">5 (Vendredi)</option>
+          <option value="6">6 (Samedi)</option>
+          <option value="7">7 (Dimanche)</option>
+        </select>
+      </div>
+      <div>
+        <label for="month">Mois</label>
+        <select id="month">
+          <option value="1">1 (Janvier)</option>
+          <option value="2">2 (Février)</option>
+          <option value="3">3 (Mars)</option>
+          <option value="4" selected>4 (Avril)</option>
+          <option value="5">5 (Mai)</option>
+          <option value="6">6 (Juin)</option>
+          <option value="7">7 (Juillet)</option>
+          <option value="8">8 (Août)</option>
+          <option value="9">9 (Septembre)</option>
+          <option value="10">10 (Octobre)</option>
+          <option value="11">11 (Novembre)</option>
+          <option value="12">12 (Décembre)</option>
+        </select>
+      </div>
+      <div>
+        <label for="year">Année</label>
+        <input id="year" type="text" value="2024">
+      </div>
+      <div>
+        <label for="size">Taille</label>
+        <select id="size">
+          <option value="petit">Petit</option>
+          <option value="moyen" selected>Moyen</option>
+          <option value="grand">Grand</option>
+        </select>
+      </div>
+      <div>
+        <label for="colHead">Couleur entête</label>
+        <input id="colHead" type="text" value="#eef2ff">
+      </div>
+      <div>
+        <label for="colWeekend">Couleur week-end</label>
+        <input id="colWeekend" type="text" value="#fff0f0">
+      </div>
+    </div>
+    <div style="margin-top:12px;">
+      <button id="btnCal" class="btn" type="button">Générer</button>
+    </div>
+    <p class="small">Exemples du sujet : calendrier(1,4,2024) ou calendrier(6,3,2025).</p>
+  </section>
+
+  <section class="card">
+    <h2>Résultat</h2>
+    <div class="calBox" id="out"></div>
+  </section>
+</main>
+<script src="js/ex4.js"></script>
+</body>
+</html>

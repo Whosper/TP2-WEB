@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP9 — Exercice 2</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>Exercice 2 — Formulaire JPO vers tableau</h1>
+</header>
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="ex1.html">Exercice 1</a>
+  <a href="ex3.html">Exercice 3</a>
+  <a href="ex4.html">Exercice 4</a>
+</nav>
+<main>
+  <section class="card">
+    <h2>Formulaire</h2>
+    <div class="grid2">
+      <div>
+        <label for="nom">Nom</label>
+        <input id="nom" type="text" autocomplete="family-name">
+      </div>
+      <div>
+        <label for="prenom">Prénom</label>
+        <input id="prenom" type="text" autocomplete="given-name">
+      </div>
+      <div>
+        <label for="bac">Étude suivie</label>
+        <select id="bac">
+          <option value="Bac pro">Bac pro</option>
+          <option value="STI">STI</option>
+          <option value="STMG">STMG</option>
+          <option value="Général">Général</option>
+        </select>
+      </div>
+      <div style="display:flex;align-items:flex-end;">
+        <button id="btnAdd" class="btn" type="button">Valider</button>
+      </div>
+    </div>
+    <p class="small" id="msg"></p>
+  </section>
+
+  <section class="card">
+    <h2>Liste des visiteurs</h2>
+    <table class="table" id="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Bac</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </section>
+</main>
+<script src="js/ex2.js"></script>
+</body>
+</html>

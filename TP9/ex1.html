@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP9 — Exercice 1</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>Exercice 1 — Définitions sur mots (popup)</h1>
+</header>
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="ex2.html">Exercice 2</a>
+  <a href="ex3.html">Exercice 3</a>
+  <a href="ex4.html">Exercice 4</a>
+</nav>
+<main>
+  <section class="card">
+    <h2>Texte</h2>
+    <p>
+      Le <span class="mark" data-term="lorem">lorem</span> ipsum est un texte factice utilisé dans la composition.
+      On peut aussi voir des exemples sur <span class="mark" data-term="php">PHP</span>, <span class="mark" data-term="js">JavaScript</span> ou <span class="mark" data-term="css">CSS</span>.
+    </p>
+    <p>
+      Le principe est le même que sur Wikipédia : un mot survolé (ou cliqué) affiche une définition à côté du mot.
+    </p>
+    <div id="popup" class="popup" role="dialog" aria-live="polite"></div>
+  </section>
+</main>
+<script src="js/ex1.js"></script>
+</body>
+</html>
